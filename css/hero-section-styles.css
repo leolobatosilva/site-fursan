@@ -1,0 +1,85 @@
+/*
+* FURSAN - Defense and Security
+* Hero Section Styles
+*/
+
+.hero-section {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--white);
+  position: relative;
+  padding: 0;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.hero-logo-container {
+  margin-bottom: 40px;
+}
+
+.hero-logo {
+  height: auto;
+  max-width: 300px;
+}
+
+.hero-main-logo {
+  margin: 20px 0;
+}
+
+.main-logo-image {
+  max-width: 600px;
+  height: auto;
+}
+
+.company-profile-text {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 1.2rem;
+  color: var(--primary);
+}
+
+/* Media queries for responsive design */
+@media (max-width: 992px) {
+  .hero-logo {
+    max-width: 250px;
+  }
+
+  .main-logo-image {
+    max-width: 500px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-logo {
+    max-width: 200px;
+  }
+
+  .main-logo-image {
+    max-width: 400px;
+  }
+
+  .company-profile-text {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-logo {
+    max-width: 180px;
+  }
+
+  .main-logo-image {
+    max-width: 300px;
+  }
+}
