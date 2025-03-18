@@ -25,7 +25,34 @@ function initScrollAnimations() {
     rootMargin: '0px 0px -100px 0px', // Trigger slightly before element is in view
     threshold: 0.1 // Trigger when 10% of element is visible
   };
-  
+  // Adicione este código ao seu arquivo main.js
+  document.addEventListener('DOMContentLoaded', function() {
+    // Função para detectar quando elementos estão visíveis na viewport
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        // Se o elemento está visível
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      root: null, // viewport
+      threshold: 0.2, // 20% do elemento visível
+      rootMargin: '0px'
+    });
+
+    // Observar a seção Latin America
+    const latinAmericaSection = document.querySelector('.latin-america-section');
+    if (latinAmericaSection) {
+      observer.observe(latinAmericaSection);
+    }
+
+    // Opcional: observar outras seções para animações similares
+    const sections = document.querySelectorAll('section');
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+  });
   // Create observer
   const observer = new IntersectionObserver(function(entries, observer) {
     entries.forEach(entry => {

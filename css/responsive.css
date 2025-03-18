@@ -240,3 +240,87 @@
     padding: 20px;
   }
 }
+/* Estilos responsivos para a seção Latin America - adicionar ao responsive.css */
+
+/* Tablet */
+@media screen and (max-width: 1024px) {
+  .latin-america-content {
+    height: 380px;
+  }
+
+  .info-content h3 {
+    font-size: 26px;
+  }
+
+  .info-content p {
+    font-size: 17px;
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: 900px) {
+  .latin-america-section .section-title {
+    font-size: 32px;
+  }
+
+  .latin-america-content {
+    height: 400px;
+  }
+
+  .info-content p {
+    font-size: 16px;
+  }
+}
+
+/* Small Mobile Devices */
+@media screen and (max-width: 768px) {
+  .latin-america-section .section-title {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+
+  .latin-america-content {
+    height: 420px;
+  }
+
+  .info-content h3 {
+    font-size: 24px;
+  }
+
+  .info-content p {
+    font-size: 16px;
+  }
+
+  .info-content-box {
+    padding: 15px;
+  }
+}
+
+/* Extra Small Devices */
+@media screen and (max-width: 480px) {
+  .latin-america-section {
+    padding: 40px 0;
+  }
+
+  .latin-america-section .section-title {
+    font-size: 24px;
+  }
+
+  .latin-america-content {
+    height: 450px;
+  }
+
+  .info-content h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+  }
+
+  .info-content p {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  .center-divider {
+    margin: 15px auto;
+  }
+}
