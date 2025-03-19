@@ -275,7 +275,7 @@ section:not(.hero-section)::before {
 .large-logo {
   max-width: 100%;
   height: auto;
-  max-height: 250px;
+  max-height: 550px;
   margin: 0 auto;
   display: block;
 }
@@ -860,21 +860,44 @@ section:not(.hero-section)::before {
 .back-to-top:hover {
   background-color: var(--accent-color);
 }
-/* Versão atualizada do CSS para a seção Latin America */
 
-/* Configuração básica da seção */
+/* Configuração básica da seção com posicionamento relativo para o background */
 .latin-america-section {
-  padding: 50px 0;
-  background: linear-gradient(135deg, #f0f0f0 0%, #fafafa 100%);
+  padding: 80px 0;
   position: relative;
+  overflow: hidden;
+  z-index: 1;
 }
 
+/* Background de bandeiras que ocupa toda a seção */
+.flags-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../assets/images/bandeiras.png');
+  background-size: 100% 100%;
+  background-position: center;
+  z-index: -1;
+  transform-style: preserve-3d;
+  opacity: 0.7; /* Opacidade ajustada para as bandeiras */
+}
+
+/* Título da seção com box de destaque */
 .latin-america-section .section-title {
-  color: #1a3a6d;
+  color: white;
   text-align: center;
   font-size: 36px;
   margin-bottom: 40px;
   position: relative;
+  display: inline-block;
+  padding: 10px 30px;
+  background-color: rgba(26, 58, 109, 0.73); /* 90% opaco */
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  margin: 0 auto 40px;
+  display: table;
 }
 
 .latin-america-section .section-title:after {
@@ -885,62 +908,27 @@ section:not(.hero-section)::before {
   transform: translateX(-50%);
   width: 80px;
   height: 3px;
-  background-color: #0074d9;
+  background-color: #FFD700;
 }
 
-/* Container principal - contém as bandeiras e o conteúdo */
+/* Container de conteúdo com fundo semi-transparente */
 .latin-america-content {
   position: relative;
-  border-radius: 8px;
-  overflow: hidden;
-  max-width: 1200px;
+  max-width: 800px;
   margin: 0 auto;
-  height: 350px; /* Altura fixa para o efeito */
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  perspective: 1000px; /* Perspectiva para efeitos 3D */
+  background-color: rgba(26, 58, 109, 0.73); /* 90% opaco */
+  border-radius: 8px;
+  padding: 40px;
+  box-shadow: 0 5px 25px rgba(186, 37, 37, 0.25);
   transform-style: preserve-3d;
-}
-
-/* Elemento de animação das bandeiras */
-.flags-animation {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url('../assets/images/bandeiras.png');
-  background-size: 102% 102%; /* Ligeiramente maior para permitir movimento */
-  background-position: center;
-  z-index: 1;
-  transform-style: preserve-3d; /* Para efeitos 3D */
-  backface-visibility: hidden; /* Melhor desempenho */
-  animation: flag-wave 12s ease-in-out infinite;
-}
-
-/* Box semi-transparente para o conteúdo com suave gradiente */
-.info-content-box {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
+  backface-visibility: hidden;
   z-index: 2;
-  background: linear-gradient(135deg,
-  rgba(26, 58, 109, 0.7) 0%,
-  rgba(26, 58, 109, 0.65) 50%,
-  rgba(26, 58, 109, 0.7) 100%
-  ); /* Gradiente para melhorar o efeito */
-  backdrop-filter: blur(1px); /* Suave blur para acentuar profundidade */
+  backdrop-filter: blur(2px); /* Leve desfoque para melhorar a legibilidade */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Estilos para o texto e elementos dentro da caixa de informações */
 .info-content {
-  width: 100%;
-  max-width: 800px;
   text-align: center;
 }
 
@@ -949,6 +937,7 @@ section:not(.hero-section)::before {
   font-size: 28px;
   margin-bottom: 20px;
   font-weight: 600;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .info-content p {
@@ -956,219 +945,26 @@ section:not(.hero-section)::before {
   font-size: 18px;
   line-height: 1.6;
   margin-bottom: 15px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .center-divider {
   width: 50px;
   height: 3px;
-  background-color: white;
+  background-color: #FFD700;
   margin: 20px auto;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
+/* Texto destacado em cor dourada */
 .highlight {
-  color: #FFD700; /* Cor dourada */
+  color: #FFD700;
   font-weight: 600;
+  padding: 0 3px;
 }
 
-/* Animações para o efeito de ondulação */
-
-/* Keyframes para o efeito de ondulação das bandeiras */
-@keyframes flag-wave {
-  0% {
-    background-position: 0% 0%;
-    transform: perspective(500px) rotateX(2deg) rotateY(0deg);
-  }
-  20% {
-    background-position: 1% 0%;
-    transform: perspective(500px) rotateX(1deg) rotateY(1deg);
-  }
-  40% {
-    background-position: 0% 1%;
-    transform: perspective(500px) rotateX(0deg) rotateY(2deg);
-  }
-  60% {
-    background-position: -1% 0%;
-    transform: perspective(500px) rotateX(-1deg) rotateY(1deg);
-  }
-  80% {
-    background-position: 0% -1%;
-    transform: perspective(500px) rotateX(-2deg) rotateY(0deg);
-  }
-  100% {
-    background-position: 0% 0%;
-    transform: perspective(500px) rotateX(2deg) rotateY(0deg);
-  }
-}
-
-/* Efeito de sombra dinâmica para melhorar a percepção de profundidade */
-@keyframes shadow-wave {
-  0%, 100% {
-    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.2);
-  }
-  50% {
-    box-shadow: inset 0 0 70px rgba(0, 0, 0, 0.3);
-  }
-}
-
-.latin-america-content {
-  animation: shadow-wave 12s ease-in-out infinite, border-wave 15s ease-in-out infinite;
-}
-
-/* Animação de entrada do conteúdo quando a seção é visível */
-@keyframes content-fade-in {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.latin-america-section.visible .info-content {
-  animation: content-fade-in 1s ease forwards;
-}
-
-/* Animação para o divisor central */
-@keyframes divider-expand {
-  from {
-    width: 0;
-  }
-  to {
-    width: 50px;
-  }
-}
-
-.latin-america-section.visible .center-divider {
-  animation: divider-expand 0.8s ease forwards 0.5s;
-}
-
-/* Efeito de destaque para os elementos com highlight */
-@keyframes highlight-glow {
-  0% {
-    text-shadow: 0 0 0 transparent;
-  }
-  50% {
-    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
-  }
-  100% {
-    text-shadow: 0 0 0 transparent;
-  }
-}
-
-.latin-america-section.visible .highlight {
-  animation: highlight-glow 3s ease-in-out infinite;
-}
-
-/* Distorção sutil nas bordas para acentuar o efeito de vento */
-@keyframes border-wave {
-  0% {
-    border-radius: 8px 8px 8px 8px;
-  }
-  25% {
-    border-radius: 10px 8px 9px 10px;
-  }
-  50% {
-    border-radius: 9px 10px 10px 8px;
-  }
-  75% {
-    border-radius: 8px 9px 8px 10px;
-  }
-  100% {
-    border-radius: 8px 8px 8px 8px;
-  }
-}
-
-/* Transição suave para o hover */
-.info-content-box {
-  transition: background 0.3s ease;
-}
-
-.latin-america-content:hover .info-content-box {
-  background: rgba(26, 58, 109, 0.6);
-}
-
-.latin-america-content:hover .flags-animation {
-  animation-duration: 10s; /* Animação mais rápida no hover */
-}
-
-/* Estilos responsivos */
-@media screen and (max-width: 1024px) {
-  .latin-america-content {
-    height: 380px;
-  }
-
-  .info-content h3 {
-    font-size: 26px;
-  }
-
-  .info-content p {
-    font-size: 17px;
-  }
-}
-
-@media screen and (max-width: 900px) {
-  .latin-america-section .section-title {
-    font-size: 32px;
-  }
-
-  .latin-america-content {
-    height: 400px;
-  }
-
-  .info-content p {
-    font-size: 16px;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .latin-america-section .section-title {
-    font-size: 28px;
-    margin-bottom: 30px;
-  }
-
-  .latin-america-content {
-    height: 420px;
-  }
-
-  .info-content h3 {
-    font-size: 24px;
-  }
-
-  .info-content p {
-    font-size: 16px;
-  }
-
-  .info-content-box {
-    padding: 15px;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .latin-america-section {
-    padding: 40px 0;
-  }
-
-  .latin-america-section .section-title {
-    font-size: 24px;
-  }
-
-  .latin-america-content {
-    height: 450px;
-  }
-
-  .info-content h3 {
-    font-size: 22px;
-    margin-bottom: 15px;
-  }
-
-  .info-content p {
-    font-size: 14px;
-    margin-bottom: 10px;
-  }
-
-  .center-divider {
-    margin: 15px auto;
-  }
+/* Efeito hover no container de conteúdo */
+.latin-america-content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
 }

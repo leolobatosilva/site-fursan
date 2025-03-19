@@ -60,6 +60,24 @@
     margin-bottom: 30px;
     height: 350px;
   }
+
+  /* Latin America Section - Tablet */
+  .latin-america-content {
+    padding: 30px;
+    max-width: 700px;
+  }
+
+  .latin-america-section .section-title {
+    font-size: 32px;
+  }
+
+  .info-content h3 {
+    font-size: 26px;
+  }
+
+  .info-content p {
+    font-size: 17px;
+  }
 }
 
 /* Mobile */
@@ -199,9 +217,41 @@
   .mission-image {
     height: 250px;
   }
+
+  /* Latin America Section - Mobile */
+  .latin-america-section {
+    padding: 60px 0;
+  }
+
+  .latin-america-section .section-title {
+    font-size: 28px;
+    padding: 8px 20px;
+  }
+
+  .latin-america-content {
+    padding: 25px;
+    margin: 0 15px;
+  }
+
+  .info-content h3 {
+    font-size: 24px;
+  }
+
+  .info-content p {
+    font-size: 16px;
+  }
+
+  /* Correção para bandeiras em dispositivos móveis */
+  .flags-background {
+    background-size: cover; /* Ajusta para cobrir a área mantendo proporção */
+    background-position: center center; /* Centraliza a imagem */
+    opacity: 0.4;
+    animation: fabric-ripple 20s linear infinite; /* Mantém apenas a animação mais simples */
+    transform: none; /* Remove transformações 3D */
+  }
 }
 
-/* Extra Small Devices */
+/* Medium-Small Mobile Devices */
 @media screen and (max-width: 480px) {
   .logo {
     height: 50px;
@@ -239,88 +289,98 @@
   .contact-form {
     padding: 20px;
   }
-}
-/* Estilos responsivos para a seção Latin America - adicionar ao responsive.css */
 
-/* Tablet */
-@media screen and (max-width: 1024px) {
-  .latin-america-content {
-    height: 380px;
-  }
-
-  .info-content h3 {
-    font-size: 26px;
-  }
-
-  .info-content p {
-    font-size: 17px;
-  }
-}
-
-/* Mobile */
-@media screen and (max-width: 900px) {
-  .latin-america-section .section-title {
-    font-size: 32px;
-  }
-
-  .latin-america-content {
-    height: 400px;
-  }
-
-  .info-content p {
-    font-size: 16px;
-  }
-}
-
-/* Small Mobile Devices */
-@media screen and (max-width: 768px) {
-  .latin-america-section .section-title {
-    font-size: 28px;
-    margin-bottom: 30px;
-  }
-
-  .latin-america-content {
-    height: 420px;
-  }
-
-  .info-content h3 {
-    font-size: 24px;
-  }
-
-  .info-content p {
-    font-size: 16px;
-  }
-
-  .info-content-box {
-    padding: 15px;
-  }
-}
-
-/* Extra Small Devices */
-@media screen and (max-width: 480px) {
+  /* Latin America Section - Small Mobile */
   .latin-america-section {
     padding: 40px 0;
   }
 
   .latin-america-section .section-title {
     font-size: 24px;
+    padding: 6px 15px;
   }
 
   .latin-america-content {
-    height: 450px;
+    padding: 20px 15px;
+    background-color: rgba(26, 58, 109, 0.9); /* Mais opaco */
   }
 
   .info-content h3 {
     font-size: 22px;
-    margin-bottom: 15px;
   }
 
   .info-content p {
     font-size: 14px;
-    margin-bottom: 10px;
   }
 
   .center-divider {
     margin: 15px auto;
+  }
+
+  /* Correção para bandeiras em dispositivos móveis pequenos */
+  .flags-background {
+    background-size: contain; /* Garante que toda a imagem seja visível */
+    background-repeat: repeat; /* Repete a imagem se necessário */
+    background-position: center center;
+    opacity: 0.6;
+    animation: none; /* Desativa animações em telas pequenas */
+  }
+}
+
+/* Extra Small Devices */
+@media screen and (max-width: 375px) {
+  /* Latin America Section - Extra Small */
+  .latin-america-section .section-title {
+    font-size: 20px;
+    margin-bottom: 30px;
+  }
+
+  .latin-america-content {
+    padding: 15px 12px;
+    background-color: rgba(26, 58, 109, 0.95); /* Quase totalmente opaco */
+  }
+
+  .info-content h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+
+  .info-content p {
+    font-size: 13px;
+    margin-bottom: 12px;
+  }
+
+  /* Correção para bandeiras em dispositivos muito pequenos */
+  .flags-background {
+    background-size: contain;
+    background-repeat: repeat;
+    opacity: 0.25;
+  }
+}
+
+/* Dispositivos em modo paisagem */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+  .latin-america-section {
+    padding: 30px 0;
+  }
+
+  .latin-america-section .section-title {
+    margin-bottom: 15px;
+  }
+
+  .latin-america-content {
+    padding: 15px 20px;
+    margin: 0 auto;
+    max-width: 90%;
+  }
+
+  /* Layout mais horizontal para modo paisagem */
+  .info-content h3 {
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+
+  .center-divider {
+    margin: 8px auto;
   }
 }
